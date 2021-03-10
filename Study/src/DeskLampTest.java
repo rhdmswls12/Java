@@ -1,9 +1,9 @@
 class DeskLamp{
 	private boolean isOn;
-	public void turnOn() {
+	void turnOn() {
 		isOn=true;
 	}
-	public void turnOff() {
+	void turnOff() {
 		isOn=false;
 	}
 	public String toString() {
