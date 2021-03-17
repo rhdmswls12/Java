@@ -15,6 +15,8 @@ class B1{
 			System.out.println("ArithmeticException");
 		}catch(Exception e) {
 			System.out.println("Exception");
+		}finally {
+			System.out.println("finally");
 		}
 	}
 }
@@ -23,6 +25,7 @@ public class ExceptionDemo {
 		B1 b=new B1();
 		b.z(10,0);
 		b.z(1, 0);
+		b.z(2, 1);
 
 	}
 
