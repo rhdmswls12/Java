@@ -1,31 +1,29 @@
-
+import java.io.*;
 class B1{
-	private int[] arr=new int[3];
-	B1() {
-		arr[0]=0;
-		arr[1]=10;
-		arr[2]=20;
+	static void run() throws IOException,FileNotFoundException{
+		BufferedReader bReader=null;
+		String input=null;
+		bReader=new BufferedReader(new FileReader("out.txt"));
+		input=bReader.readLine();
+		System.out.println(input);
 	}
-	public void z(int first,int second) {
-		try {
-			System.out.println(arr[first]/arr[second]);
-		}catch(ArrayIndexOutOfBoundsException e) {
-			System.out.println("ArrayIndexOutOfBoundsException");
-		}catch(ArithmeticException e) {
-			System.out.println("ArithmeticException");
-		}catch(Exception e) {
-			System.out.println("Exception");
-		}finally {
-			System.out.println("finally");
-		}
+}
+class C{
+	void run() throws IOException,FileNotFoundException{
+		B1 b=new B1();
+		B1.run();
 	}
 }
 public class ExceptionDemo {
 	public static void main(String[] args) {
-		B1 b=new B1();
-		b.z(10,0);
-		b.z(1, 0);
-		b.z(2, 1);
+		C c=new C();
+		try {
+			c.run();
+		}catch(FileNotFoundException e) {
+			System.out.println("out.txt 파일은 설정 파일입니다. 이 파일이 프로젝트 루트 디렉토리에 존재해야 합니다.");
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
 
 	}
 
