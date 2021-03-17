@@ -6,6 +6,9 @@ class Calculator1{
 		this.right=right;
 	}
 	public void divide() {
+		if(right==0) {
+			throw new ArithmeticException("0으로 나누는 것은 허용되지 않습니다.");
+		}
 		try {
 			System.out.print("계산결과는 ");
 			System.out.print(this.left/this.right);
