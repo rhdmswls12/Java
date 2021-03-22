@@ -1,18 +1,23 @@
-
-class Fruit{
-	public static final Fruit APPLE=new Fruit();
-	public static final Fruit PEACH=new Fruit();
-	public static final Fruit BANANA=new Fruit();
+//enum은 class, interface와 동급의 형식을 가지는 단위
+enum Fruit{
+	APPLE,PEACH,BANANA;
 }
-class Company{
-	public static final Company GOOGLE=new Company();
-	public static final Company APPLE=new Company();
-	public static final Company ORACLE=new COMPANY(Company);
+enum Company{
+	GOOGLE,APPLE,ORACLE;
 }
-public class ConstantDemo {
+public class ConstantDemo{
 	public static void main(String[] args) {
-		if(Fruit.APPLE==Company.APPLE) {//서로 다른 카테고리는 비교 불가능
-			System.out.println("과일 애플과 회사 애플이 같다.");
+		Fruit type=Fruit.APPLE;
+		switch(type) {
+		case APPLE:
+			System.out.println(57+" kcal");
+			break;
+		case PEACH:
+			System.out.println(34+" kcal");
+			break;
+		case BANANA:
+			System.out.println(93+" kcal");
+			break;
 		}
 	}
 }
