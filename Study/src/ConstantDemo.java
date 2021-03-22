@@ -1,29 +1,18 @@
-//인터페이스에서 선언된 변수는 무조건 public static final의 속성을 가진다
-interface FRUIT{
-	int APPLE=1, PEACH=2, BANANA=3;
+
+class Fruit{
+	public static final Fruit APPLE=new Fruit();
+	public static final Fruit PEACH=new Fruit();
+	public static final Fruit BANANA=new Fruit();
 }
-interface COMPANY{
-	int GOOGLE=1,APPLE=2,ORACLE=3;
+class Company{
+	public static final Company GOOGLE=new Company();
+	public static final Company APPLE=new Company();
+	public static final Company ORACLE=new COMPANY(Company);
 }
 public class ConstantDemo {
-	
-	//company
-	private final static int COMPANY_GOOGLE=1;
-	private final static int COMPANY_APPLE=2;
-	private final static int COMPANY_ORACLE=3;
 	public static void main(String[] args) {
-		int type=FRUIT.APPLE;
-		switch(type) {
-		case FRUIT.APPLE:
-			System.out.println(57+" kcal");
-			break;
-		case FRUIT.PEACH:
-			System.out.println(34+" kcal");
-			break;
-		case FRUIT.BANANA:
-			System.out.println(93+" kcal");
-			break;
+		if(Fruit.APPLE==Company.APPLE) {//서로 다른 카테고리는 비교 불가능
+			System.out.println("과일 애플과 회사 애플이 같다.");
 		}
 	}
-
 }
