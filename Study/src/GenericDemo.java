@@ -1,13 +1,26 @@
+class StudentInfo{
+	public int grade;
+	StudentInfo(int grade){
+		this.grade=grade;
+	}
+class EmployeeInfo{
+public int rank;
+EmployeeInfo(int rank){
+	this.rank=rank;
+}
 class Person<T>{
 	public T info;
-}
-
-public class GenericDemo {
-
-	public static void main(String[] args) {
-		Person<String> p1=new Person<String>();
-		Person<StringBuilder> p2=new Person<StringBuilder>();
-		//인스턴스를 생성할 때 데이터 타입 지정
+	Person(T info){
+		this.info=info;
 	}
-
+public class GenericDemo{
+	public void main(String[] args) {
+		Person<EmployeeInfo> p1=new Person<EmployeeInfo>(new EmployeeInfo(1));
+		EmployeeInfo ei1=p1.info;
+		System.out.println(ei1.rank); //성공
+		
+		Person<String> p2=new Person<String>("부장");
+		String ei2=p2.info;
+		System.out.println(ei2.rank);//컴파일 실패
+	}
 }
