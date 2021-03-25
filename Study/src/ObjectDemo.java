@@ -18,6 +18,7 @@ public class ObjectDemo {
 		}catch(CloneNotSupportedException e) {
 			e.printStackTrace();
 		}
+		System.out.println("test");
 
 	}
 
